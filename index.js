@@ -8,9 +8,9 @@ function getMenuArray() {
             <div class="menu-item-description-left">
                 <p class="item-img">${item.emoji}</p>
                 <div class="menu-item-description">
-                    <p>${item.name}</p>
-                    <p>${item.ingredients.join(", ")}</p>
-                    <p>$${item.price}</p>
+                    <p class="menu-item-name">${item.name}</p>
+                    <p class="ingredients">${item.ingredients.join(", ")}</p>
+                    <p class="menu-item-price-p">$${item.price}</p>
                 </div>
             </div>
             <button class="add-btn" id="${item.id}">+</button>

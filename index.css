@@ -44,17 +44,21 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 70px;
 }
 
 .menu-item {
     display: flex;
     width: 500px;
     justify-content: space-between;
+    margin-bottom: 45px;
+    border-bottom: 2px solid #D2D2D2;
 }
 
 .menu-item-description{
     padding-left: 31px;
 }
+
 
 .menu-item-description-left {
     display: flex;
@@ -66,6 +70,36 @@ header h1 {
     width: 90px;
 }
 
+.menu-item-name{
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+
+}
+
+.ingredients {
+    color: #8B8B8B;
+    margin-top: 0;
+}
+
+.menu-item-price-p {
+    font-size: 1.25rem;
+    margin-bottom: 50px;
+}
+
+
 .add-btn{
     align-self: flex-start;
+    border-radius: 50%;
+    border: 1px solid #DEDEDE;
+    background-color: #FFF;
+    font-size: 2.5rem;
+    padding: 8px 19px;
+}
+
+.add-btn:hover{
+    background-color: #DEDEDE;
+}
+
+.add-btn:active {
+    background-color: #b1b1b1;
 }
