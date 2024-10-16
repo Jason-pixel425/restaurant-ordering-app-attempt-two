@@ -1,3 +1,11 @@
 body {
-    margin: 0;
+    margin: 0 auto;
+    width: 600px;
 } 
+
+header {
+    background-image: url('./Images/header_img.png');
+    background-size: cover;
+    background-position: bottom;
+    height: 200px;
+}
