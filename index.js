@@ -1,7 +1,7 @@
 import {menuArray} from './data.js';
 
 const documentMainElm = document.getElementById('document');
-
+const paymentForm = document.getElementById("payment-form");
 const order = {
     name: "",
     items: [],
@@ -21,7 +21,17 @@ documentMainElm.addEventListener('click', e => {
      document.getElementById("order-items-outer-div").innerHTML = getOrderArray();
      document.getElementById("order-total").textContent = `$${order.total}`;
 
+    } else if (e.target.id ==='complete-order'){
+        document.getElementById('payment-form').classList.remove("display_none")
     }
+})
+
+paymentForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const paymentFormData = new FormData(paymentForm)
+    order.name = paymentFormData.get("card-name")
+    document.getElementById('payment-form').classList.add("display_none");
+    document.getElementById('order').innerHTML = `Thanks, ${order.name}! Your order is on its way!`
 })
 
 function getMenuArray() {

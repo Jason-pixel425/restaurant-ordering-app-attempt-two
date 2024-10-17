@@ -29,14 +29,14 @@
                     <p class="total-p">Total: </p>
                     <p id="order-total" class="order-total">$0</p>
                 </div>
-                <button class="green-btn">Complete order</button>
+                <button id="complete-order" class="green-btn">Complete order</button>
             </section>
-            <form class="payment-form display_none">
+            <form id="payment-form" class="payment-form display_none">
                 <p class="form-text">Enter card details</p>
                 <div class="input-container">
-                    <input class="payment-input" type="text" id="card-name" aria-label="Enter your name" placeholder="Enter your name" />
-                    <input class="payment-input" type="number" id="card-number" aria-label="Enter your card number" placeholder="Enter Your card number" />
-                    <input class="payment-input" type="number" id="card-cvv" aria-label="Enter card CVV" placeholder="Enter card CVV" />
+                    <input class="payment-input" type="text" name="card-name" id="card-name" aria-label="Enter your name" placeholder="Enter your name" />
+                    <input class="payment-input" type="number" name="card-number" id="card-number" aria-label="Enter your card number" placeholder="Enter Your card number" />
+                    <input class="payment-input" type="number" name="card-cvv" id="card-cvv" aria-label="Enter card CVV" placeholder="Enter card CVV" />
                 </div>
                 <button type="submit" id="submit" class="green-btn">Pay</button>
             </form>
