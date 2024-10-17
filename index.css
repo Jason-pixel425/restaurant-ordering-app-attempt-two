@@ -103,3 +103,11 @@ header h1 {
 .add-btn:active {
     background-color: #b1b1b1;
 }
+
+/* Order */
+
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

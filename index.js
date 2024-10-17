@@ -1,6 +1,8 @@
 import {menuArray} from './data.js';
 
 
+
+
 function getMenuArray() {
     const menuString = menuArray.map((item) => {
         return (`
