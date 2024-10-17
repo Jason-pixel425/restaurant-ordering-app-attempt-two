@@ -111,3 +111,51 @@ header h1 {
     flex-direction: column;
     align-items: center;
 }
+
+.order-items-outer-div, .order-total-div {
+    width: 500px;
+    
+}
+
+.order-items-inner-div, .order-total-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-items-inner-div-left {
+    display: flex;
+    align-items: center;
+}
+
+.item-name, .total-p{
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.item-price, .order-total{
+    font-size: 1.25rem;
+    
+}
+
+.remove-btn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.75rem;
+    color: #BBB;
+    margin-left: 13px;
+    padding: 0;
+    background-color: #FFF;
+    border: none;
+    
+}
+
+.order-total-div {
+    border-top: 2px solid black;
+    padding-top: 15px;
+}
+
+/* .order-total-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+} */
+

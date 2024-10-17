@@ -19,6 +19,8 @@ documentMainElm.addEventListener('click', e => {
             removeItemFromOrder(parseInt(e.target.dataset.itemId))
         }
      document.getElementById("order-items-outer-div").innerHTML = getOrderArray();
+     document.getElementById("order-total").textContent = `$${order.total}`;
+
     }
 })
 
@@ -42,13 +44,9 @@ function getMenuArray() {
 }
 
 function addItemToOrder(itemId){
-    if (order.items.filter(item => (item.id === itemId)).length){
-        alert("item already in order")
-    } else {
     console.log(order.items)
     order.items.push(menuArray.find(item => item.id === itemId));
     order.total += order.items.find(item => item.id === itemId).price;
-    }
 }
 
 function removeItemFromOrder(itemId){
@@ -56,13 +54,20 @@ function removeItemFromOrder(itemId){
     order.items = order.items.filter(item => itemId !== item.id);
 }
 
+function getTotal(){
+    return (`
+        `)
+}
+
 function getOrderArray() {
     const orderString = order.items.map((item) => {
         return (`
             <div class="order-items-inner-div">
-                <p>${item.name}</p>
-                <button class="remove-btn" data-item-id="${item.id}">Remove</button>
-                <p>${item.price}</p>
+                <div class="order-items-inner-div-left">
+                    <p class="item-name">${item.name}</p>
+                    <button class="remove-btn" data-item-id="${item.id}">Remove</button>
+                    </div>
+                <p class="item-price">$${item.price}</p>
             </div>
             `)
     }).join(" ")
