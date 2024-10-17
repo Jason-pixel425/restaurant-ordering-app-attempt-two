@@ -11,9 +11,11 @@ const order = {
 
 documentMainElm.addEventListener('click', e => {
     if (e.target.dataset.itemId) {
-        if(e.target.id === "add-btn"){
+        if(e.target.className === "add-btn"){
             addItemToOrder(parseInt(e.target.dataset.itemId))
+            e.target.disabled = true;
         } else {
+            document.querySelector(`[data-item-id="${e.target.dataset.itemId}"]`).disabled = false;
             removeItemFromOrder(parseInt(e.target.dataset.itemId))
         }
      document.getElementById("order-items-outer-div").innerHTML = getOrderArray();
@@ -40,13 +42,18 @@ function getMenuArray() {
 }
 
 function addItemToOrder(itemId){
+    if (order.items.filter(item => (item.id === itemId)).length){
+        alert("item already in order")
+    } else {
+    console.log(order.items)
     order.items.push(menuArray.find(item => item.id === itemId));
     order.total += order.items.find(item => item.id === itemId).price;
+    }
 }
 
 function removeItemFromOrder(itemId){
     order.total -= menuArray.find(item => item.id === itemId).price;
-    order.items = order.items.filter(item => itemId === item.id);
+    order.items = order.items.filter(item => itemId !== item.id);
 }
 
 function getOrderArray() {
@@ -54,7 +61,7 @@ function getOrderArray() {
         return (`
             <div class="order-items-inner-div">
                 <p>${item.name}</p>
-                <button id="remove-btn" class="remove-btn" data-item-id="${item.id}">Remove</button>
+                <button class="remove-btn" data-item-id="${item.id}">Remove</button>
                 <p>${item.price}</p>
             </div>
             `)
@@ -64,6 +71,7 @@ function getOrderArray() {
 
 function render() {
     document.getElementById('menu').innerHTML = getMenuArray();
+    
 }
 
 render();
