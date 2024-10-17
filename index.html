@@ -1,18 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
        <link rel="stylesheet" href="./index.css">
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="description" content="Jason's Scrimba project of creating a web application replicating a fictional restaurant menu">
+       <title>Restaurant Menu</title>
     </head>
+
     <body>
         <header>
            <h1>Jimmy's Diner</h1>
            <p>The best burgers and pizzas in town.</p>
         </header>
-        <main>
+
+        <main id="document">
             <section id="menu" class="menu">
 
             </section>
+
+            <section id="order" class="order">
+                <h2>Your order</h2>
+                <div id="order-items-outer-div" class="order-items-outer-div">
+
+                </div>
+
+                <div class="order-total-div">
+                    <p class="total-p">Total: </p>
+                    <p id="order-total" class="order-total">$0</p>
+                </div>
+                <button class="green-btn">Complete order</button>
+            </section>
+
         </main>
 	<script src="index.js" type="module"></script>
     </body>
