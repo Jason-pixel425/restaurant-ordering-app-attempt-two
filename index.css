@@ -151,6 +151,29 @@ header h1 {
 .order-total-div {
     border-top: 2px solid black;
     padding-top: 15px;
+    margin-bottom: 50px;
+}
+
+.green-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.15rem;
+    border: none;
+    width: 500px;
+    background-color: #16DB99;
+    color: #FFF;
+    padding: 20px 0;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.green-btn:hover {
+    background-color: #13C589;
+
+}
+
+.green-btn:active{
+    background-color: #11AF7A;
 }
 
 /* .order-total-div {
