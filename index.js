@@ -1,7 +1,24 @@
 import {menuArray} from './data.js';
 
+const documentMainElm = document.getElementById('document');
+
+const order = {
+    name: "",
+    items: [],
+    total: 0
+}
 
 
+documentMainElm.addEventListener('click', e => {
+    if (e.target.dataset.itemId) {
+        if(e.target.id === "add-btn"){
+            addItemToOrder(parseInt(e.target.dataset.itemId))
+        } else {
+            removeItemFromOrder(parseInt(e.target.dataset.itemId))
+        }
+     document.getElementById("order-items-outer-div").innerHTML = getOrderArray();
+    }
+})
 
 function getMenuArray() {
     const menuString = menuArray.map((item) => {
@@ -15,11 +32,34 @@ function getMenuArray() {
                     <p class="menu-item-price-p">$${item.price}</p>
                 </div>
             </div>
-            <button class="add-btn" id="${item.id}">+</button>
+            <button class="add-btn" id="add-btn" data-item-id="${item.id}">+</button>
         </div>
             `)
     }).join("");
     return menuString;
+}
+
+function addItemToOrder(itemId){
+    order.items.push(menuArray.find(item => item.id === itemId));
+    order.total += order.items.find(item => item.id === itemId).price;
+}
+
+function removeItemFromOrder(itemId){
+    order.total -= menuArray.find(item => item.id === itemId).price;
+    order.items = order.items.filter(item => itemId === item.id);
+}
+
+function getOrderArray() {
+    const orderString = order.items.map((item) => {
+        return (`
+            <div class="order-items-inner-div">
+                <p>${item.name}</p>
+                <button id="remove-btn" class="remove-btn" data-item-id="${item.id}">Remove</button>
+                <p>${item.price}</p>
+            </div>
+            `)
+    }).join(" ")
+    return orderString;
 }
 
 function render() {
