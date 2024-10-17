@@ -31,7 +31,7 @@ paymentForm.addEventListener('submit', e => {
     const paymentFormData = new FormData(paymentForm)
     order.name = paymentFormData.get("card-name")
     document.getElementById('payment-form').classList.add("display_none");
-    document.getElementById('order').innerHTML = `Thanks, ${order.name}! Your order is on its way!`
+    document.getElementById('order').innerHTML = `<div class="thanks_msg"><p>Thanks, ${order.name}! Your order is on its way!</p></div>`
 })
 
 function getMenuArray() {
@@ -62,11 +62,6 @@ function addItemToOrder(itemId){
 function removeItemFromOrder(itemId){
     order.total -= menuArray.find(item => item.id === itemId).price;
     order.items = order.items.filter(item => itemId !== item.id);
-}
-
-function getTotal(){
-    return (`
-        `)
 }
 
 function getOrderArray() {
